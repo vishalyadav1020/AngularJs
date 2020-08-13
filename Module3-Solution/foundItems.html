@@ -1,0 +1,14 @@
+<div class="row">
+    <div ng-repeat='item in ctrl.foundItems'>
+        <div class="clearfix" ng-if="$index % 2 == 0"></div>
+        <div class="col-md-6">
+            <div class="jumbotron">
+                <h2>{{item.name}}</h2>
+                <h3>{{item.short_name}}</h3>
+                <p>{{item.description}}</p>
+                <button ng-click='ctrl.onRemove({index: $index})' class="btn btn-lg btn-primary">Dont want this one!</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='alert alert-danger' ng-show='ctrl.onEmpty'>{{ctrl.onEmpty}}</div>
