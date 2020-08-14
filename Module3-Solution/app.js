@@ -61,6 +61,7 @@ function MenuSearchService($http,ApiPath){
         })
         .then(function(result){
             var foundItems = [];
+            searchTerm = searchTerm.toLowerCase();
             for(var i = 0;i < result.data['menu_items'].length;i++){
                 if(searchTerm.length > 0 && result.data['menu_items'][i]['description'].toLowerCase().indexOf(searchTerm) !== -1){
                     foundItems.push(result.data['menu_items'][i]);
